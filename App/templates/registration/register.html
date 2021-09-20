@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <!-- Boxicons.com Iconos (utilizar font)-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="{% static 'style_login.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'login' %}">
+                    <i class='bx bx-user-pin'></i>
+                    Inicio de Sesión
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-group'></i>
+                    Quienes Somos
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-info-circle' ></i>
+                    Información
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'home' %}" class="active">
+                    <i class='bx bx-home-alt'></i>
+                    Inicio
+                </a>
+            </li>
+            <li class="left">
+                <a href="{% url 'home' %}">
+                    <i class='bx bx-stats'></i>
+                    AgroEstadística
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
