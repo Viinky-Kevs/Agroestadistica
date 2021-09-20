@@ -56,31 +56,6 @@ li a:hover {
   color: white;
 }
 
-
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
-
-
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
-
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
 .dropdown {
   float: left;
   overflow: hidden;
@@ -122,6 +97,15 @@ div.content {
   text-align: left;
 }
 
+div.content-section{
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+.home-section .h1{
+  text-align: right;
+}
 
 .dropdown-content a:hover {
   background-color: #ddd;
@@ -129,4 +113,22 @@ div.content {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
 }

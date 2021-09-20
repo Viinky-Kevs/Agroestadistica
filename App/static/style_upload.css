@@ -63,14 +63,11 @@ div.contenedor {
   height: 1000px;
 }
 
-.home-section{
-  position: fixed;
-  background: #FFE4B5;
-  left: 100px;
-  width: calc(100% - 100px);
-  text-align: center;
+div.content-section{
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
 }
-
 
 @media screen and (max-width: 700px) {
   .sidebar {

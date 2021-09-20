@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Statistics
+		</title>
+		<link rel="stylesheet" href="{% static 'style_index.css' %}">
+		<!-- Boxicons.com Iconos (utilizar font)-->
+    	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    	<link rel="icon" href="{% static 'icon.ico' %}">
+	</head>
+	<header>
+		<nav>
+			<ul>
+				<li>
+					<a href="{% url 'login' %}">
+						<i class='bx bx-user-pin'></i>
+						Inicio de Sesión
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class='bx bx-group'></i>
+						Quienes Somos
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class='bx bx-info-circle' ></i>
+						Información
+					</a>
+				</li>
+				<li>
+					<a href="{% url 'home' %}">
+						<i class='bx bx-home-alt'></i>
+						Inicio
+					</a>
+				</li>
+				<li class="left">
+					<a href="{% url 'home' %}"  class="active">
+						<i class='bx bx-stats'></i>
+						AgroEstadística
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<body>
+		<div class="sidebar">
+			<a href="{% url 'upload' %}">
+				Archivos
+			</a>
+			<div class="dropdown">
+    			<button class="dropbtn">
+    				Análisis Univariado
+      				<i class="fa fa-caret-down"></i>
+    			</button>
+    			<div class="dropdown-content">
+			      <a href="{% url 'tstudent' %}">Prueba T-Student</a>
+			      <a href="#">Prueba Wilcoxon</a>
+			      <a href="#">Prueba Chi-square</a>
+			      <a href="#">Prueba Anova</a>
+    			</div>
+  			</div>
+  			<div class="dropdown">
+    			<button class="dropbtn">
+    				Análisis Multivariado
+      				<i class="fa fa-caret-down"></i>
+    			</button>
+    			<div class="dropdown-content">
+			      <a href="#">Prueba T2 de Hotelling</a>
+			      <a href="#">Prueba Manova</a>
+			      <a href="#">Prueba Manova no paramétrica</a>
+    			</div>
+  			</div>		
+  		</div>
+  		<div class="content-section">
+  			<h1>
+  				T-Student T-Student T-Student T-Student 
+  			</h1>
+  		</div>
+	</body>
+</html>

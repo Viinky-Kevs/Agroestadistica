@@ -33,3 +33,6 @@ def upload(request):
         context['name'] = name
         context['size'] = size
     return render(request, 'AppWeb/upload.html', context)
+
+def tstudent(request):
+    return render(request, 'AppWeb/tstudent.html')
