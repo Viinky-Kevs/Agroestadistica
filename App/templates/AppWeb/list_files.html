@@ -1,4 +1,7 @@
 {% load static %}
+
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -77,11 +80,30 @@
   		</div>
   		<div class="content-section">
   			<h1>
-  				T-Student 
+  				Lista de archivos
   			</h1>
-  			<div class="formula">
-  				
-  			</div>
+  			<table class="tabla">
+  				<thead>
+  					<tr>
+  						<th> Nombre archivo </th>
+  						
+  						<th> Descarga </th>
+  					</tr>
+  				</thead>
+  				<tbody>
+  					{% for file in xlsx %}
+
+  					<td> {{ file.Nombre_archivo }} </td>
+  					
+  					<td>
+  						<a href="{{ file.Descarga_archivo.url }}" class="btn btn-primary btn-sm">
+  							Descargar archivo
+  						</a>
+  					</td>
+
+  					{% endfor %}
+  				</tbody>
+  			</table>
   		</div>
 	</body>
 </html>

@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -77,11 +78,13 @@
 	  		<div class="formulario_archivo">
 		      	<form method="POST" enctype="multipart/form-data" class="upload">
 		      		{% csrf_token %}
-		      		<input type="file" name="Archivo">
-		      		<button type="submit">
+		      		{{ form|crispy }}
+		      		<button type="submit" class="btn btn-primary">
 		      			Subir archivo
 		      		</button>
+		      		
 		      	</form>
+		      	<!--
 		      	{% if name %}
 		      		<p>
 		      			Nombre archivo: <a href="{{ name }}">
@@ -95,7 +98,7 @@
 		      				{{ size }}
 		      			</a>
 		      		</p>
-		      	{% endif %}
+		      	{% endif %}-->
 	      	</div>
       	</div>
 	</body>

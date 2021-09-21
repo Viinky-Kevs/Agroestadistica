@@ -13,12 +13,21 @@
 	<body>
 		<nav>
 			<ul>
+				{% if user.is_authenticated %}
+				<li>
+					<a href="{% url 'logout' %}">
+						<i class='bx bx-user'></i>
+						{{ user.username }}
+					</a>
+				</li>
+				{% else %}
 				<li>
 					<a href="{% url 'login' %}">
 						<i class='bx bx-user-pin'></i>
 						Inicio de Sesión
 					</a>
 				</li>
+				{% endif %}
 				<li>
 					<a href="#">
 						<i class='bx bx-group'></i>
