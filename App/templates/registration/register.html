@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Login</title>
+	<title>Register</title>
 	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <!-- Boxicons.com Iconos (utilizar font)-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -43,5 +44,18 @@
             </li>
         </ul>
     </nav>
+    <div class="contenedor">
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{ form }}
+            <input type="submit" name="Registrar">
+        </form>
+        <div class="pie-form">
+            <a href="#">¿Perdiste tu contraseña?</a>
+            <a href="{% url 'login' %}">¿Tienes Cuenta? Inicia sesión</a>
+            <a href="{% url 'home' %}">« Volver</a>
+        </div>
+    </div>
 </body>
 </html>

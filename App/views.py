@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
+from .forms import CustomUser
 
 # Create your views here.
 
@@ -7,7 +8,7 @@ def home(request):
 	return render(request, 'AppWeb/index.html')
 
 def register_user(request):
-    data = { 'form': CustomUser()}
+    data = {'form': CustomUser()}
     if request.method == 'POST':
         formulario = CustomUser(data = request.POST)
         if formulario.is_valid():
