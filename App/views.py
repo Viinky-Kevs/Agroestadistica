@@ -56,7 +56,7 @@ def tstudent(request):
         file = SelectFile(request.POST)
         results = request.Get(request.POST)
         if file.is_valid():
-            context['name_file'] = results
+            context['dir_file'] = file.Descarga_archivo.url
             
     else:
        file = SelectFile(request.POST) 

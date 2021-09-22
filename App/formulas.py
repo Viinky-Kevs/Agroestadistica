@@ -15,8 +15,8 @@ def T_student(file):
 
 	print(names_col)
 
-	option_1 = input()
-	option_2 = input()
+	option_1 = input_1
+	option_2 = input_2
 
 	options = []
 
