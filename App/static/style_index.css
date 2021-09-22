@@ -103,8 +103,8 @@ div.content-section{
   height: 1000px;
 }
 
-.home-section .h1{
-  text-align: right;
+h1{
+  text-align: center;
 }
 
 .dropdown-content a:hover {
@@ -113,6 +113,16 @@ div.content-section{
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+footer {
+    margin-top: auto;
+    margin-bottom:auto;
+    text-align: right;
 }
 
 @media screen and (max-width: 700px) {

@@ -13,12 +13,21 @@
 	<header>
 		<nav>
 			<ul>
+				{% if user.is_authenticated %}
+				<li>
+					<a href="{% url 'logout' %}">
+						<i class='bx bx-user'></i>
+						{{ user.username }}
+					</a>
+				</li>
+				{% else %}
 				<li>
 					<a href="{% url 'login' %}">
 						<i class='bx bx-user-pin'></i>
 						Inicio de Sesión
 					</a>
 				</li>
+				{% endif %}
 				<li>
 					<a href="#">
 						<i class='bx bx-group'></i>
@@ -80,7 +89,7 @@
   		</div>
   		<div class="content-section">
   			<h1>
-  				T-Student 
+  				Prueba T-Student 
   			</h1>
   			<div class="formula">
   				<form>
@@ -89,8 +98,8 @@
   					<input type="submit" value="Importar archivo">
   				</form>
   			</div>
-  			<div>
-  				{{ name }}
+  			<div class="nombre_archivo">
+  				{{ name_file }}
   			</div>
   		</div>
 	</body>

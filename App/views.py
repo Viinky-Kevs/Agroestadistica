@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.decorators import login_required
 from .forms import CustomUser, FilesForm, SelectFile
 from .formulas import T_student
 from .models import Files_up
@@ -25,6 +26,7 @@ def register_user(request):
         data["form"] = formulario    
     return render(request, 'registration/register.html',data)
 
+@login_required(login_url = '/accounts/login/')
 def upload(request):
     context = {}
     
@@ -39,20 +41,23 @@ def upload(request):
     context['form'] = form
     return render(request, 'AppWeb/upload.html', context)
 
+@login_required(login_url = '/accounts/login/')
 def list_files(request):
     context = {}
     xlsx = Files_up.objects.all()
     #context['files'] = files
     return render(request, 'AppWeb/list_files.html', {'xlsx':xlsx})
 
+@login_required(login_url = '/accounts/login/')
 def tstudent(request):
     context = {}
     #form = SelectFile()
     if request.method == "POST":
         file = SelectFile(request.POST)
+        results = request.Get(request.POST)
         if file.is_valid():
-            context['name'] = 'hola'
-            print(file)
+            context['name_file'] = results
+            
     else:
        file = SelectFile(request.POST) 
     

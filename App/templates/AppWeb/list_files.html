@@ -16,12 +16,21 @@
 	<header>
 		<nav>
 			<ul>
+				{% if user.is_authenticated %}
+				<li>
+					<a href="{% url 'logout' %}">
+						<i class='bx bx-user'></i>
+						{{ user.username }}
+					</a>
+				</li>
+				{% else %}
 				<li>
 					<a href="{% url 'login' %}">
 						<i class='bx bx-user-pin'></i>
 						Inicio de Sesión
 					</a>
 				</li>
+				{% endif %}
 				<li>
 					<a href="#">
 						<i class='bx bx-group'></i>
@@ -85,28 +94,34 @@
   			<h1>
   				Lista de archivos
   			</h1>
-  			<table class="tabla">
-  				<thead>
-  					<tr>
-  						<th> Nombre archivo </th>
-  						
-  						<th> Descarga </th>
-  					</tr>
-  				</thead>
-  				<tbody>
-  					{% for file in xlsx %}
+  			<h3>
+  				En la siguiente tabla podrá encontrar los archivos disponibles, primero el nombre del archivo con el cual fue subido, y segundo con el link correspondiente para su descarga.
+  			</h3>
+  			<div class="forma_archivo">
+	  			<table class="tabla">
+	  				<thead>
+	  					<tr>
+	  						<th> Nombre archivo </th>
+	  						
+	  						<th> Descarga </th>
+	  					</tr>
+	  				</thead>
+	  				<br>
+	  				<tbody>
+	  					{% for file in xlsx %}
 
-  					<td> {{ file.Nombre_archivo }} </td>
-  					
-  					<td>
-  						<a href="{{ file.Descarga_archivo.url }}" class="btn btn-primary btn-sm">
-  							Descargar archivo
-  						</a>
-  					</td>
-
-  					{% endfor %}
-  				</tbody>
-  			</table>
+	  					<td> {{ file.Nombre_archivo }} </td>
+	  					
+	  					<td>
+	  						<a href="{{ file.Descarga_archivo.url }}" class="btn btn-primary btn-sm">
+	  							Descargar archivo
+	  						</a>
+	  					</td>
+	  					<hr>
+	  					{% endfor %}
+	  				</tbody>
+	  			</table>
+  			</div>
   		</div>
 	</body>
 </html>

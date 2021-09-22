@@ -14,12 +14,21 @@
 	<body>
 		<nav>
 			<ul>
+				{% if user.is_authenticated %}
+				<li>
+					<a href="{% url 'logout' %}">
+						<i class='bx bx-user'></i>
+						{{ user.username }}
+					</a>
+				</li>
+				{% else %}
 				<li>
 					<a href="{% url 'login' %}">
 						<i class='bx bx-user-pin'></i>
 						Inicio de Sesión
 					</a>
 				</li>
+				{% endif %}
 				<li>
 					<a href="#">
 						<i class='bx bx-group'></i>
@@ -78,10 +87,21 @@
   			</div>		
   		</div>
   		<div class="content-section">
+  			<div class="titulo">
+  				<h1>
+  					Subir archivo
+  				</h1>
+  				<h4>
+  					En los siguientes campos por favor ingrese el nombre del archivo con el cual desea guardarlo, y a continuación seleccione el archivo en "Elegir archivo", por último seleccione "Subir archivo".
+  				</h4>
+  				<h4>
+  					Después de subido el archivo lo redigirá a la lista de archivos disponibles.
+  				</h4>
+  			</div>
 	  		<div class="formulario_archivo">
 		      	<form method="POST" enctype="multipart/form-data" class="upload">
 		      		{% csrf_token %}
-		      		{{ form|crispy }}
+		      		{{ form.as_table}}
 		      		<button type="submit" class="btn btn-primary">
 		      			Subir archivo
 		      		</button>
