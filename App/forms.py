@@ -13,3 +13,7 @@ class FilesForm(forms.ModelForm):
 	class Meta:
 		model = Files_up
 		fields = ('Nombre_archivo', 'Descarga_archivo')
+
+class SelectFile(forms.Form):
+	nombre_analisis = forms.CharField(max_length = 100)
+	seleccionar_archivo = forms.ModelChoiceField(queryset=Files_up.objects.all())

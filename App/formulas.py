@@ -4,9 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import plotly as ply
 
-def T_student(request):
-
-	file = request.FILES("myFile")
+def T_student(file):
 
 	df = pd.read_excel(file)
 

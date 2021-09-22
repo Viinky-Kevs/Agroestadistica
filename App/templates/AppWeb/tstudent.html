@@ -51,6 +51,9 @@
 			<a href="{% url 'upload' %}">
 				Archivos
 			</a>
+			<a href="{% url 'listfiles' %}">
+				Lista Archivos
+			</a>
 			<div class="dropdown">
     			<button class="dropbtn">
     				Análisis Univariado
@@ -80,7 +83,14 @@
   				T-Student 
   			</h1>
   			<div class="formula">
-  				
+  				<form>
+  					{% csrf_token %}
+  					{{ form.as_p }}
+  					<input type="submit" value="Importar archivo">
+  				</form>
+  			</div>
+  			<div>
+  				{{ name }}
   			</div>
   		</div>
 	</body>
